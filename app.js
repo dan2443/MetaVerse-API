@@ -49,7 +49,7 @@ mongoose
     "mongodb+srv://webtechs:tEQHnkJYZl6uNoaj@firseat.gsg55.mongodb.net/webtechs?retryWrites=true&w=majority"
   )
   .then((result) => {
-    app.listen(port, initDB()); //, initDB()
+    app.listen(port, initDBWithAllLands()); //, initDB()
   })
   .catch((err) => console.log(err));
 
