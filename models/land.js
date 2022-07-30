@@ -32,6 +32,10 @@ const landSchema = new Schema(
       type: Number,
       required: true,
     },
+    game: {
+      type: String,
+      default: "https://dark-floyd.github.io/Webtech2/",
+    },
   },
   { timestamps: true }
 );
