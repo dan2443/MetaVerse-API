@@ -7,7 +7,7 @@ const User = require("../models/user");
 
 exports.getLands = (req, res, next) => {
   const currentPage = req.query.page || 1;
-  const size = req.query.size || 100;
+  const size = req.query.size || 10000;
   let totalItems;
   Land.find()
     .countDocuments()
