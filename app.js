@@ -108,7 +108,7 @@ async function initDBWithAllLands(req, res, next) {
         type = "GARDEN";
       } else {
         type = "PROPERTY";
-        isOnSale = true;
+        isOnSale = Math.random() < 0.5; // random boolean
         price = getRandomPrice(15, 200, 2);
       }
 
