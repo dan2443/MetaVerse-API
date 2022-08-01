@@ -10,6 +10,7 @@ exports.getUserDetails = (req, res, next) => {
         message: "User details found!",
         money: user.money,
         role: user.role,
+        name: user.name,
       });
     })
     .catch((err) => {
