@@ -113,8 +113,6 @@ exports.buyLand = (req, res, next) => {
             land.ownerId = userId;
             land.ownerName = user.name;
             land.isOnSale = false;
-            //land.save();
-            //user.lands.push(land)
             user.money -= land.price;
             owner.save();
             user.save();

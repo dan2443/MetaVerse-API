@@ -184,28 +184,30 @@ MGarden[2][2] = 1;
 MGarden[2][3] = 1;
 MGarden[2][8] = 1;
 MGarden[2][9] = 1;
-MGarden[(3, 2)] = 1;
-MGarden[(3, 4)] = 1;
-MGarden[(3, 7)] = 1;
-MGarden[(3, 9)] = 1;
-MGarden[(4, 2)] = 1;
-MGarden[(4, 5)] = 1;
-MGarden[(4, 6)] = 1;
-MGarden[(4, 9)] = 1;
-MGarden[(5, 2)] = 1;
-MGarden[(5, 9)] = 1;
-MGarden[(6, 2)] = 1;
-MGarden[(6, 9)] = 1;
-MGarden[(7, 2)] = 1;
-MGarden[(7, 9)] = 1;
-MGarden[(8, 2)] = 1;
-MGarden[(8, 9)] = 1;
+MGarden[3][2] = 1;
+MGarden[3][4] = 1;
+MGarden[3][7] = 1;
+MGarden[3][9] = 1;
+MGarden[4][2] = 1;
+MGarden[4][5] = 1;
+MGarden[4][6] = 1;
+MGarden[4][9] = 1;
+MGarden[5][2] = 1;
+MGarden[5][9] = 1;
+MGarden[6][2] = 1;
+MGarden[6][9] = 1;
+MGarden[7][2] = 1;
+MGarden[7][9] = 1;
+MGarden[8][2] = 1;
+MGarden[8][9] = 1;
 
 function isGarden(x, y) {
-  //if (x > 10 && x < 20 && y > 20 && y < 30) DGarden[x % 10][y % 10];
-  //if (x > 70 && x < 80 && y > 30 && y < 40) ZGarden[x % 10][y % 10];
-
-  return false;
+  if (x > 10 && x < 20 && y > 20 && y < 30) return DGarden[x % 10][y % 10];
+  else if (x > 70 && x < 80 && y > 30 && y < 40) return ZGarden[x % 10][y % 10];
+  else if (x > 40 && x < 50 && y > 40 && y < 50) return MGarden[x % 10][y % 10];
+  else if (x > 60 && x < 70 && y > 20 && y < 30) return 1;
+  else if (x > 20 && x < 30 && y > 80 && y < 90) return 1;
+  else return 0;
 }
 
 function getRandomPrice(min, max, decimals) {
