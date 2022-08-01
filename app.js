@@ -207,7 +207,7 @@ function isGarden(x, y) {
   else if (x > 40 && x < 50 && y > 40 && y < 50) return MGarden[x % 10][y % 10];
   else if (x > 60 && x < 70 && y > 20 && y < 30) return 1;
   else if (x > 20 && x < 30 && y > 80 && y < 90) return 1;
-  else return 0;
+  else return Math.random() < 0.1;
 }
 
 function getRandomPrice(min, max, decimals) {
