@@ -6,22 +6,29 @@ const Land = require("../models/land");
 const User = require("../models/user");
 
 exports.getLands = (req, res, next) => {
-  const currentPage = req.query.page || 1;
-  const size = req.query.size || 10000;
-  let totalItems;
+  // const currentPage = req.query.page || 1;
+  // const size = req.query.size || 10000;
+  // let totalItems;
   Land.find()
-    .countDocuments()
-    .then((count) => {
-      totalItems = count;
-      return Land.find()
-        .skip((currentPage - 1) * size)
-        .limit(size);
-    })
+    // .countDocuments()
+    // .then((count) => {
+    //   totalItems = count;
+    //   return Land.find()
+    //     .skip((currentPage - 1) * size)
+    //     .limit(size);
+    // })
     .then((lands) => {
+      var sorted_data = lands.sort(function (x, y) {
+        var n = x.x_coordinate - y.x_coordinate;
+        if (n !== 0) {
+          return n;
+        }
+        return x.y_coordinate - y.y_coordinate;
+      });
       res.status(200).json({
         message: "lands fetched.",
-        lands: lands,
-        totalItems: totalItems,
+        lands: sorted_data,
+        // totalItems: totalItems,
       });
     })
     .catch((err) => {
