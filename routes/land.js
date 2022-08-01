@@ -13,4 +13,6 @@ router.post("/buy/:landId", isAuth, isBusiness, landController.buyLand);
 
 router.get("/", landController.getLands);
 
+router.get("/:landId", landController.getLandById);
+
 module.exports = router;

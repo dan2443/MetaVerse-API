@@ -32,6 +32,28 @@ exports.getLands = (req, res, next) => {
     });
 };
 
+exports.getLandById = (req, res, next) => {
+  const landId = req.params.landId;
+  Land.findById(landId)
+    .then((land) => {
+      if (!land) {
+        const error = new Error("Could not find land by landId.");
+        error.statusCode = 404;
+        throw error;
+      }
+      res.status(200).json({
+        message: "land fetched.",
+        land: land,
+      });
+    })
+    .catch((err) => {
+      if (!err.statusCode) {
+        err.statusCode = 500;
+      }
+      next(err);
+    });
+};
+
 exports.updateLand = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty())

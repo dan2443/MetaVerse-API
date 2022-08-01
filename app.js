@@ -131,49 +131,80 @@ function isRoad(x, y) {
   else return false;
 }
 
-const DGarden = new Array(9 * 9).fill(0);
-DGarden[(1, 1)] = 1;
-DGarden[(2, 1)] = 1;
-DGarden[(3, 1)] = 1;
-DGarden[(1, 2)] = 1;
-DGarden[(2, 3)] = 1;
-DGarden[(2, 4)] = 1;
-DGarden[(3, 1)] = 1;
-DGarden[(3, 4)] = 1;
-DGarden[(4, 1)] = 1;
-DGarden[(4, 5)] = 1;
-DGarden[(5, 1)] = 1;
-DGarden[(5, 4)] = 1;
-DGarden[(6, 1)] = 1;
-DGarden[(6, 3)] = 1;
-DGarden[(6, 4)] = 1;
-DGarden[(7, 1)] = 1;
-DGarden[(7, 2)] = 1;
-DGarden[(7, 3)] = 1;
+const DGarden = Array(10)
+  .fill(0)
+  .map(() => Array(10).fill(0));
+DGarden[2][2] = 1;
+DGarden[2][3] = 1;
+DGarden[2][4] = 1;
+DGarden[3][2] = 1;
+DGarden[3][4] = 1;
+DGarden[3][5] = 1;
+DGarden[4][2] = 1;
+DGarden[4][5] = 1;
+DGarden[5][2] = 1;
+DGarden[5][6] = 1;
+DGarden[6][2] = 1;
+DGarden[6][5] = 1;
+DGarden[7][2] = 1;
+DGarden[7][4] = 1;
+DGarden[7][5] = 1;
+DGarden[8][2] = 1;
+DGarden[8][3] = 1;
+DGarden[8][4] = 1;
 
-const ZGarden = new Array(9 * 9).fill(0);
-ZGarden[(1, 1)] = 1;
-ZGarden[(2, 1)] = 1;
-ZGarden[(3, 1)] = 1;
-ZGarden[(4, 1)] = 1;
-ZGarden[(5, 1)] = 1;
-ZGarden[(6, 1)] = 1;
-ZGarden[(7, 1)] = 1;
-ZGarden[(7, 2)] = 1;
-ZGarden[(6, 3)] = 1;
-ZGarden[(5, 4)] = 1;
-ZGarden[(4, 4)] = 1;
-ZGarden[(3, 6)] = 1;
-ZGarden[(2, 7)] = 1;
-ZGarden[(1, 8)] = 1;
-ZGarden[(2, 8)] = 1;
-ZGarden[(3, 8)] = 1;
-ZGarden[(4, 8)] = 1;
-ZGarden[(5, 8)] = 1;
-ZGarden[(6, 8)] = 1;
-ZGarden[(7, 8)] = 1;
+const ZGarden = Array(10)
+  .fill(0)
+  .map(() => Array(10).fill(0));
+ZGarden[2][2] = 1;
+ZGarden[2][3] = 1;
+ZGarden[2][4] = 1;
+ZGarden[2][5] = 1;
+ZGarden[2][6] = 1;
+ZGarden[2][7] = 1;
+ZGarden[2][8] = 1;
+ZGarden[3][8] = 1;
+ZGarden[4][7] = 1;
+ZGarden[5][6] = 1;
+ZGarden[6][5] = 1;
+ZGarden[7][4] = 1;
+ZGarden[8][3] = 1;
+ZGarden[9][2] = 1;
+ZGarden[9][3] = 1;
+ZGarden[9][4] = 1;
+ZGarden[9][5] = 1;
+ZGarden[9][6] = 1;
+ZGarden[9][7] = 1;
+ZGarden[9][8] = 1;
+
+const MGarden = Array(10)
+  .fill(0)
+  .map(() => Array(10).fill(0));
+MGarden[2][2] = 1;
+MGarden[2][3] = 1;
+MGarden[2][8] = 1;
+MGarden[2][9] = 1;
+MGarden[(3, 2)] = 1;
+MGarden[(3, 4)] = 1;
+MGarden[(3, 7)] = 1;
+MGarden[(3, 9)] = 1;
+MGarden[(4, 2)] = 1;
+MGarden[(4, 5)] = 1;
+MGarden[(4, 6)] = 1;
+MGarden[(4, 9)] = 1;
+MGarden[(5, 2)] = 1;
+MGarden[(5, 9)] = 1;
+MGarden[(6, 2)] = 1;
+MGarden[(6, 9)] = 1;
+MGarden[(7, 2)] = 1;
+MGarden[(7, 9)] = 1;
+MGarden[(8, 2)] = 1;
+MGarden[(8, 9)] = 1;
 
 function isGarden(x, y) {
+  //if (x > 10 && x < 20 && y > 20 && y < 30) DGarden[x % 10][y % 10];
+  //if (x > 70 && x < 80 && y > 30 && y < 40) ZGarden[x % 10][y % 10];
+
   return false;
 }
 
